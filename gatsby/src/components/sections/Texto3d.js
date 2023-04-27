@@ -17,7 +17,8 @@ class RenderCarton extends Component {
         // Scene
         var scene = new THREE.Scene()
 
-        scene.position.x = 1.68
+        scene.position.x = 2.5
+        scene.position.y = -0.68
         scene.rotation.z = .2
         scene.rotation.x = 0.5
         scene.rotation.y = .5
@@ -77,11 +78,21 @@ class RenderCarton extends Component {
         textProgramadorGeometry.center()
         textProgramadorGeometry.translate(0, -0.8, 0);
 
+
+
+
+        
+
+        const materialText = new THREE.MeshNormalMaterial()
+        materialText.flatShading= false
+        const text = new THREE.Mesh(textProgramadorGeometry, materialText)
+
+
+
         function animate() {
 
-            const elapsedTime = clock.getElapsedTime()
 
-            textProgramadorGeometry.rotateY(elapsedTime * .001)
+            text.rotation.x += 0.005
 
 
 			requestAnimationFrame( animate );
@@ -97,9 +108,7 @@ class RenderCarton extends Component {
 
 		animate();
 
-        const materialText = new THREE.MeshNormalMaterial()
-        materialText.flatShading= false
-        const text = new THREE.Mesh(textProgramadorGeometry, materialText)
+
 
         scene.add(text)
 
@@ -130,25 +139,7 @@ fontLoader.load(
         textLuisGeometry.translate(0, 0.8, 0);
 
 
-        function animate() {
-
-            const elapsedTime = clock.getElapsedTime()
-
-            textLuisGeometry.rotateY(elapsedTime * .001)
-
-
-			requestAnimationFrame( animate );
-
-			var delta = clock.getDelta();
-
-			if ( mixer ) mixer.update( delta );
-
-			renderer.render(scene,camera);
-            controls.update();
-
-		}
-
-		animate();
+        
 
 
         // textGeometry.computeBoundingBox()
@@ -170,6 +161,28 @@ fontLoader.load(
         const materialText = new THREE.MeshNormalMaterial()
         materialText.flatShading= false
         const text = new THREE.Mesh(textLuisGeometry, materialText)
+
+
+        function animate() {
+
+
+            text.rotation.x += 0.005
+
+
+			requestAnimationFrame( animate );
+
+			var delta = clock.getDelta();
+
+			if ( mixer ) mixer.update( delta );
+
+			renderer.render(scene,camera);
+            controls.update();
+
+		}
+
+		animate();
+
+        
         scene.add(text)
 
 
