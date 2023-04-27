@@ -17,10 +17,11 @@ class RenderCarton extends Component {
         // Scene
         var scene = new THREE.Scene()
 
-        scene.position.x = 1.7
+        scene.position.x = 1.68
         scene.rotation.z = .2
         scene.rotation.x = 0.5
         scene.rotation.y = .5
+        
 
         var sizes = {
             width: window.innerWidth,
@@ -40,49 +41,17 @@ class RenderCarton extends Component {
 
 		// Base camera
             var camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-            camera.position.x = 0
-            camera.position.y = 0
-            camera.position.z = 6
-            camera.rotation.y = 15
+            
+            camera.position.z = 7
             scene.add(camera)
 
             
 		this.mount.appendChild( renderer.domElement );
 
 	
-        var group = new THREE.Group()
-        scene.add(group)
-
 
         const fontLoader = new FontLoader()
 
-        fontLoader.load(
-            '/fonts/vt323.json',
-    (font) => {
-        const textElGeometry = new TextGeometry(
-            'el',
-            {
-                font,
-                size: 1.7,
-                height: 0.1,
-                curveSegments: 10,
-                bevelEnabled: true,
-                bevelThickness: 0.15,
-                bevelSize: 0.05,
-                bevelOffset: 0.04,
-                bevelSegments: 5
-            }
-        )
-        textElGeometry.center()
-        group.add(textElGeometry)
-
-        const materialText = new THREE.MeshNormalMaterial()
-        materialText.flatShading= false
-        const text = new THREE.Mesh(textElGeometry, materialText)
-        scene.add(text)
-
-    }
-        )
 
 
 
@@ -96,7 +65,7 @@ class RenderCarton extends Component {
                 font,
                 size: 1.2,
                 height: 0.1,
-                curveSegments: 10,
+                curveSegments: 5,
                 bevelEnabled: true,
                 bevelThickness: 0.15,
                 bevelSize: 0.05,
@@ -104,10 +73,29 @@ class RenderCarton extends Component {
                 bevelSegments: 5
             }
         )
-        group.add(textProgramadorGeometry)
 
         textProgramadorGeometry.center()
-        textProgramadorGeometry.translate(0, -1.3, 0);
+        textProgramadorGeometry.translate(0, -0.8, 0);
+
+        function animate() {
+
+            const elapsedTime = clock.getElapsedTime()
+
+            textProgramadorGeometry.rotateY(elapsedTime * .001)
+
+
+			requestAnimationFrame( animate );
+
+			var delta = clock.getDelta();
+
+			if ( mixer ) mixer.update( delta );
+
+			renderer.render(scene,camera);
+            controls.update();
+
+		}
+
+		animate();
 
         const materialText = new THREE.MeshNormalMaterial()
         materialText.flatShading= false
@@ -124,7 +112,7 @@ fontLoader.load(
     '/fonts/vt323.json',
     (font) => {
         const textLuisGeometry = new TextGeometry(
-            'Luis',
+            'Luis el',
             {
                 font,
                 size: 1.7,
@@ -133,14 +121,34 @@ fontLoader.load(
                 bevelEnabled: true,
                 bevelThickness: 0.15,
                 bevelSize: 0.05,
-                bevelOffset: 0.04,
+                bevelOffset: 0.01,
                 bevelSegments: 5
             }
         )
-        group.add(textLuisGeometry)
 
         textLuisGeometry.center()
-        textLuisGeometry.translate(0, 1.6, 0);
+        textLuisGeometry.translate(0, 0.8, 0);
+
+
+        function animate() {
+
+            const elapsedTime = clock.getElapsedTime()
+
+            textLuisGeometry.rotateY(elapsedTime * .001)
+
+
+			requestAnimationFrame( animate );
+
+			var delta = clock.getDelta();
+
+			if ( mixer ) mixer.update( delta );
+
+			renderer.render(scene,camera);
+            controls.update();
+
+		}
+
+		animate();
 
 
         // textGeometry.computeBoundingBox()
@@ -251,11 +259,7 @@ window.addEventListener('resize', () =>
 
 		function animate() {
 
-            const elapsedTime = clock.getElapsedTime()
-
-
 			requestAnimationFrame( animate );
-            scene.rotation.y = elapsedTime  * 0.02
 
 			var delta = clock.getDelta();
 
