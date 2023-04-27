@@ -1,0 +1,32 @@
+{
+  "name": "luis-ben-tez",
+  "version": "1.0.0",
+  "private": true,
+  "description": "luis-ben-tez",
+  "author": "Luis B.",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^2.1.1",
+    "gatsby": "^5.9.0",
+    "gatsby-plugin-image": "^3.9.0",
+    "gatsby-plugin-manifest": "^5.9.0",
+    "gatsby-plugin-sharp": "^5.9.0",
+    "gatsby-plugin-sitemap": "^6.9.0",
+    "gatsby-plugin-styled-components": "^6.9.0",
+    "gatsby-source-filesystem": "^5.9.0",
+    "gatsby-transformer-sharp": "^5.9.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-three-fiber": "^6.0.13",
+    "styled-components": "^5.3.10"
+  }
+}
