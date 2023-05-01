@@ -13,7 +13,7 @@ const Sidebar = () => {
 
                 </section>
                 <section id="text">
-                    <p>Amo el <strong>arte</strong>, digital y tradicional y tengo pasión por mezclar arte y <strong>tecnología</strong> creando interfaces visualmente atractivas explorando nuevas tecnologías y estando a la <strong>vanguardia</strong> en las últimas tendencias en desarrollo <strong>web.</strong></p>
+                    <p>I love <strong>art</strong>, digital and traditional, I have pasion for mixing art and <strong>technology</strong> creating visual atractive interfaces exploring new technologies and being at the <strong>forefront</strong> in the last trends in <strong>web.</strong> development</p>
                 </section>
                 <section id="skills">
                     <ul>
@@ -42,7 +42,7 @@ const Sidebar = () => {
 }
 
 const SidebarContainer = styled.header`
-width: 400px;
+width: 350px;
 height: 100vh;
 text-align: center;
 position: fixed;
@@ -161,7 +161,14 @@ top: 0;
             font-weight: normal;
             font-size: 1.2rem;
             color: var(--pink);
+            animation: blinker 900ms linear infinite;
+
         }
+        @keyframes blinker {
+  50% {
+    opacity: .5;
+  }
+}
     }
     #text {
         strong {

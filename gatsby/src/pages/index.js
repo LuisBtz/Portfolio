@@ -3,7 +3,7 @@ import Layout from '../components/layout/layout'
 import { Seo } from "../components/layout/seo";
 // import { StaticImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
-import RenderCarton from "../components/sections/Texto3d";
+import RenderLuisElProgramador from "../components/sections/RenderLuisElProgramador";
 
 const Container = styled.section`
 `
@@ -16,7 +16,7 @@ const IndexPage = () => {
   return (
     <Layout pageTitle="Luis Benítez">
       <Container>
-        <RenderCarton />
+        <RenderLuisElProgramador />
       </Container>
     </Layout>
   )

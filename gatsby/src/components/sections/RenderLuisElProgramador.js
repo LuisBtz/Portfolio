@@ -10,14 +10,14 @@ import { FontLoader } from 'three/examples/jsm/loaders/FontLoader'
 extend({ TextGeometry })
 
 
-class RenderCarton extends Component {
+class RenderLuisElProgramador extends Component {
 	componentDidMount() {
 		// === THREE.JS CODE START ===
 		var mixer;
         // Scene
         var scene = new THREE.Scene()
 
-        scene.position.x = 2.5
+        scene.position.x = 2.3
         scene.position.y = -0.68
         scene.rotation.z = .2
         scene.rotation.x = 0.5
@@ -303,4 +303,4 @@ const Render = styled.div`
 `
 
 
-export default RenderCarton
+export default RenderLuisElProgramador
