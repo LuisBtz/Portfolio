@@ -9,7 +9,7 @@ const Sidebar = () => {
                 <section id="foto">
                     <div className='image'></div>
                     <h1>Luis Benítez</h1>
-                    <h2>Programador Front End</h2>
+                    <h2>Front End Developer</h2>
 
                 </section>
                 <section id="text">
