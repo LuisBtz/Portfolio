@@ -300,6 +300,10 @@ window.addEventListener('resize', () =>
 }
 
 const Render = styled.div`
+    @media  (max-width: 900px) {
+        display: none;
+        
+    }
 `
 
 

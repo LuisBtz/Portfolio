@@ -32,6 +32,9 @@ const Sidebar = () => {
                             <a href='https://www.instagram.com/btz_luis/'>Instgram</a>
                         </li>
                         <li>
+                            <a href='mailto:luisbttf@gmail.com'>Mail</a>
+                        </li>
+                        <li>
                             <a href='https://twitter.com/luisbtzart'>Twitter</a>
                         </li>
                     </ul>
@@ -48,6 +51,10 @@ text-align: center;
 position: fixed;
 left: 0%;
 top: 0;
+@media  (max-width: 900px) {
+        display: none;
+        
+    }
     .sidebar {
         position: relative;
         width: 100%;

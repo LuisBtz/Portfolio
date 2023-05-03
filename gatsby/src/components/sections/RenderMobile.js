@@ -10,14 +10,13 @@ import { FontLoader } from 'three/examples/jsm/loaders/FontLoader'
 extend({ TextGeometry })
 
 
-class RenderLuisElProgramador extends Component {
+class RenderMobile   extends Component {
 	componentDidMount() {
 		// === THREE.JS CODE START ===
 		var mixer;
         // Scene
         var scene = new THREE.Scene()
 
-        scene.position.x = 2.3
         scene.position.y = -0.68
         scene.rotation.z = .2
         scene.rotation.x = 0.5
@@ -43,7 +42,7 @@ class RenderLuisElProgramador extends Component {
 		// Base camera
             var camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
             
-            camera.position.z = 7
+            camera.position.z = 12
             scene.add(camera)
 
             
@@ -300,7 +299,11 @@ window.addEventListener('resize', () =>
 }
 
 const Render = styled.div`
+@media  (max-width: 900px) {
+        display: block;
+        
+    }
 `
 
 
-export default RenderLuisElProgramador
+export default RenderMobile

@@ -4,8 +4,10 @@ import { Seo } from "../components/layout/seo";
 // import { StaticImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
 import RenderLuisElProgramador from "../components/sections/RenderLuisElProgramador";
+import RenderMobile from "../components/sections/RenderMobile";
 
 const Container = styled.section`
+
 `
 
 const IndexPage = () => {
@@ -17,6 +19,7 @@ const IndexPage = () => {
     <Layout pageTitle="Luis Benítez">
       <Container>
         <RenderLuisElProgramador />
+        <RenderMobile />
       </Container>
     </Layout>
   )
